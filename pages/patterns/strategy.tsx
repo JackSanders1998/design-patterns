@@ -3,10 +3,6 @@ import DuckSimulator, {
   ResponseType,
 } from "../../patterns/strategy/DuckSimulator";
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 type PropType = {
   buttonText: string;
   strategyFunction: ResponseType;
@@ -22,7 +18,7 @@ const Strategy = () => {
 
   function DuckFeed(props: DisplayDuckType) {
     return (
-      <div className="flow-root">
+      <div className="flow-root bg-slate-800 p-6 border rounded-lg border-slate-500">
         <ul role="list" className="-mb-8">
           {simulations.map((simulation, eventIdx) => (
             <li key={simulation.mallard}>
@@ -35,12 +31,7 @@ const Strategy = () => {
                 ) : null}
                 <div className="relative flex space-x-3">
                   <div>
-                    <span
-                      className={classNames(
-                        simulation.iconBackground,
-                        "h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-gray-800"
-                      )}
-                    >
+                    <span className="bg-blue-500 h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-gray-800">
                       <simulation.icon
                         className="h-5 w-5 text-white"
                         aria-hidden="true"
@@ -67,13 +58,9 @@ const Strategy = () => {
 
   const StrategyContent = () => {
     return (
-      <div className="flex flex-row">
-        <div className="basis-1/2">
-          <DuckFeed duckType="mallard" />
-        </div>
-        <div className="basis-2/2">
-          <DuckFeed duckType="rubberDuck" />
-        </div>
+      <div className="flex flex-wrap gap-10">
+        <DuckFeed duckType="mallard" />
+        <DuckFeed duckType="rubberDuck" />
       </div>
     );
   };
@@ -95,29 +82,27 @@ const Strategy = () => {
     );
   };
   return (
-    <div className="">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto py-8">
-          <div className="flex flex-wrap gap-8 pb-10">
-            <StrategyButton
-              buttonText="Talk"
-              strategyFunction={duck.simulateTalking()}
-            />
-            <StrategyButton
-              buttonText="Quack"
-              strategyFunction={duck.simulateQuack()}
-            />
-            <StrategyButton
-              buttonText="Fly"
-              strategyFunction={duck.simulateFly()}
-            />
-            <StrategyButton
-              buttonText="Dynamic"
-              strategyFunction={duck.simulateChangeBehaviorDynamically()}
-            />
-          </div>
-          <StrategyContent />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto py-8">
+        <div className="flex flex-wrap gap-8 pb-10">
+          <StrategyButton
+            buttonText="Talk"
+            strategyFunction={duck.simulateTalking()}
+          />
+          <StrategyButton
+            buttonText="Quack"
+            strategyFunction={duck.simulateQuack()}
+          />
+          <StrategyButton
+            buttonText="Fly"
+            strategyFunction={duck.simulateFly()}
+          />
+          <StrategyButton
+            buttonText="Dynamic"
+            strategyFunction={duck.simulateChangeBehaviorDynamically()}
+          />
         </div>
+        {simulations.length ? <StrategyContent /> : null}
       </div>
     </div>
   );

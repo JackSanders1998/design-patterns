@@ -11,6 +11,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -34,25 +35,25 @@ function Layout({ children }: { children: React.ReactNode }) {
     },
     {
       name: "Pattern0",
-      href: "#",
+      href: "/patterns/pattern0",
       icon: FolderIcon,
       current: router.route === "/patterns/pattern0",
     },
     {
       name: "Pattern1",
-      href: "#",
+      href: "/patterns/pattern1",
       icon: CalendarIcon,
       current: router.route === "/patterns/pattern1",
     },
     {
       name: "Pattern2",
-      href: "#",
+      href: "/patterns/pattern2",
       icon: InboxIcon,
       current: router.route === "/patterns/pattern2",
     },
     {
-      name: "Pattern2",
-      href: "#",
+      name: "Pattern3",
+      href: "/patterns/pattern3",
       icon: ChartBarIcon,
       current: router.route === "/patterns/pattern3",
     },
@@ -112,6 +113,12 @@ function Layout({ children }: { children: React.ReactNode }) {
                         />
                       </button>
                     </div>
+                    <Link href="/">
+                      <a className="flex flex-shrink-0 flex-nowrap items-center px-4 text-slate-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6">
+                        <HomeIcon aria-hidden="true" />
+                        Home
+                      </a>
+                    </Link>
                   </Transition.Child>
                   <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
                     <nav className="mt-5 space-y-1 px-2">
@@ -151,8 +158,17 @@ function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Static sidebar for desktop */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
+            <div className="flex h-16 items-center px-4">
+              <Link href="/">
+                <a>
+                  <div className="grid grid-cols-2 gap-8 text-xl text-slate-400 group-hover:text-gray-300 h-6 w-6">
+                    <HomeIcon aria-hidden="true" />
+                    Home
+                  </div>
+                </a>
+              </Link>
+            </div>
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
               <nav className="mt-5 flex-1 space-y-1 px-2">
                 {navigation.map((item) => (

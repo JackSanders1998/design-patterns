@@ -12,7 +12,6 @@ import {
 export type ResponseType = {
   mallard: string;
   rubberDuck: string;
-  iconBackground: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
@@ -29,7 +28,6 @@ export default class DuckSimulator {
     return {
       mallard: this.mallard.display(),
       rubberDuck: this.rubberDuck.display(),
-      iconBackground: "bg-blue-500",
       icon: CheckIcon,
     };
   }
@@ -38,7 +36,6 @@ export default class DuckSimulator {
     return {
       mallard: this.mallard.performQuack(),
       rubberDuck: this.rubberDuck.performQuack(),
-      iconBackground: "bg-blue-500",
       icon: RadioIcon,
     };
   }
@@ -47,7 +44,6 @@ export default class DuckSimulator {
     return {
       mallard: this.mallard.performFly(),
       rubberDuck: this.rubberDuck.performFly(),
-      iconBackground: "bg-blue-500",
       icon: PaperAirplaneIcon,
     };
   }
@@ -58,7 +54,6 @@ export default class DuckSimulator {
     return {
       mallard: this.mallard.performFly(),
       rubberDuck: this.rubberDuck.performFly(),
-      iconBackground: "bg-blue-500",
       icon: RocketLaunchIcon,
     };
   }
