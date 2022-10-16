@@ -1,4 +1,3 @@
-
 export default interface FlyBehavior {
-	fly():string
+  fly(): string;
 }

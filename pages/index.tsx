@@ -1,17 +1,9 @@
-import type { NextPage } from 'next'
-import Link from "next/link";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-    return (
-        <>
-            <Link href={'patterns/strategy'}>
-                Strategy Pattern
-            </Link>
-            <Link href={'patterns/observer'}>
-                Observer Pattern
-            </Link>
-        </>
-    )
-}
+  return (
+    <>Checkout some design patterns by clicking through the left sidebar!</>
+  );
+};
 
-export default Home
+export default Home;
