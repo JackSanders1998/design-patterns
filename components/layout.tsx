@@ -34,10 +34,10 @@ function Layout({ children }: { children: React.ReactNode }) {
       current: router.route === "/patterns/observer",
     },
     {
-      name: "Pattern0",
-      href: "/patterns/pattern0",
+      name: "Singleton Pattern",
+      href: "/patterns/singleton",
       icon: FolderIcon,
-      current: router.route === "/patterns/pattern0",
+      current: router.route === "/patterns/singleton",
     },
     {
       name: "Pattern1",
