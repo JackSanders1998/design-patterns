@@ -52,10 +52,10 @@ function Layout({ children }: { children: React.ReactNode }) {
       current: router.route === "/patterns/pattern2",
     },
     {
-      name: "Pattern3",
-      href: "/patterns/pattern3",
+      name: "Command Pattern",
+      href: "/patterns/command",
       icon: ChartBarIcon,
-      current: router.route === "/patterns/pattern3",
+      current: router.route === "/patterns/command",
     },
   ];
 
