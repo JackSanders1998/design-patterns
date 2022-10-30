@@ -1,4 +1,5 @@
 import Command from "./Command";
+import {ApplianceStatus, ApplianceAttributes} from "./CommandTypes";
 
 export default class Light {
   location: string;
@@ -8,14 +9,20 @@ export default class Light {
     this.location = location;
   }
 
-  public on(): void {
+  public on(): ApplianceAttributes {
     this.level = 100;
-    console.log(this.location + " light is on");
+    return {
+      location: this.location,
+      status: ApplianceStatus.ON,
+    }
   }
 
-  public off(): void {
-    this.level = 100;
-    console.log(this.location + " light is off");
+  public off(): ApplianceAttributes {
+    this.level = 0;
+    return {
+      location: this.location,
+      status: ApplianceStatus.OFF,
+    }
   }
 
   public dim(level: number): void {
