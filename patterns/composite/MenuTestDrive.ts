@@ -1,10 +1,10 @@
 import MenuItem from "./MenuItem";
-import MenuComponent, { MenuItemType, MenuType } from "./MenuComponent";
+import MenuComponent, { MenuType } from "./MenuComponent";
 import Waitress from "./Waitress";
 import Menu from "./Menu";
 
 class MenuTestDrive {
-  public static main(): MenuType | MenuItemType {
+  public static main(): MenuType {
     const pancakeHouseMenu: MenuComponent = new Menu(
       "PANCAKE HOUSE MENU",
       "Breakfast"

@@ -86,20 +86,6 @@ const Command = () => {
       )
     }
 
-    const CeilingFanButton = ({applianceStatus, classNames}: {applianceStatus: ApplianceStatus, classNames?: string}) => {
-      const handleClick = () => {
-        if (applianceStatus === ApplianceStatus.ON) {
-          remoteLoader.pressOn(ButtonName.LIVING_ROOM_STEREO);
-        } else if (applianceStatus === ApplianceStatus.OFF) {
-          remoteLoader.pressOff(ButtonName.LIVING_ROOM_STEREO);
-        }
-        setData(remoteLoader.getData());
-      }
-      return (
-          <button onClick={handleClick} className={`border border-1 border-slate-100 rounded-md text-center ${classNames}`}>{applianceStatus}</button>
-      )
-    }
-
     const RemoteLabel = ({buttonText, classNames}: {buttonText: string, classNames?: string}) => {
       return (
           <div className={`border border-1 border-slate-100 rounded-md text-center col-span-3 ${classNames}`}>{buttonText}</div>
@@ -120,7 +106,7 @@ const Command = () => {
               <RemoteButton buttonText='off'/>
               <RemoteButton buttonText='on'/>
               <RemoteLabel buttonText='Living Room Light'/>
-              <RemoteButton buttonText='undo' classNames='col-span-4'/>
+              <RemoteButton buttonText='undo' classNames='col-span-5'/>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import MenuComponent, { MenuItemType, MenuType } from "./MenuComponent";
+import MenuComponent, { MenuType } from "./MenuComponent";
 
 class Waitress {
   allMenus: MenuComponent;
@@ -7,7 +7,7 @@ class Waitress {
     this.allMenus = allMenus;
   }
 
-  public printMenu(): MenuType | MenuItemType {
+  public printMenu(): MenuType {
     return this.allMenus.print();
   }
 }

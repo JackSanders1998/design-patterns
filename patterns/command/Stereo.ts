@@ -65,6 +65,8 @@ export class StereoOnWithCDCommand implements Command {
   stereo: Stereo;
   volume: number;
 
+  // TODO: execute and undo any series of commands in any order (metaCommand)
+
   public constructor(stereo: Stereo) {
     this.stereo = stereo;
   }

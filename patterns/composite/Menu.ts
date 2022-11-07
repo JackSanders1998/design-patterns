@@ -1,4 +1,4 @@
-import MenuComponent, { MenuItemType, MenuType } from "./MenuComponent";
+import MenuComponent, {MenuClass, MenuType} from "./MenuComponent";
 
 class Menu extends MenuComponent {
   menuComponents: MenuComponent[];
@@ -38,14 +38,22 @@ class Menu extends MenuComponent {
   public print(): MenuType {
     let logger: MenuType = {
       name: this.getName(),
+      class: MenuClass.MENU,
       description: this.getDescription(),
       menuItems: [],
     };
     /* iterator */
     for (const menuComponent of this.menuComponents) {
-      logger.menuItems.push(<MenuItemType>menuComponent.print());
+      // @ts-ignore
+      logger.menuItems.push(<MenuType>menuComponent.print());
     }
     return logger;
+    // return {
+    //   name: 'COMPLETE',
+    //   class: MenuClass.MENU,
+    //   description: 'COMPLETE DESCRIPTION',
+    //   menuItems: [logger],
+    // };
   }
 }
 

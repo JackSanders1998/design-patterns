@@ -1,4 +1,4 @@
-import MenuComponent, { MenuItemType } from "./MenuComponent";
+import MenuComponent, {MenuClass, MenuType} from "./MenuComponent";
 
 class MenuItem extends MenuComponent {
   name: string;
@@ -35,9 +35,10 @@ class MenuItem extends MenuComponent {
     return this.vegetarian;
   }
 
-  public print(): MenuItemType {
+  public print(): MenuType {
     return {
       name: this.getName(),
+      class: MenuClass.ITEM,
       description: this.getDescription(),
       isVegetarian: this.isVegetarian(),
       price: this.getPrice(),

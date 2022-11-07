@@ -1,14 +1,15 @@
-export type MenuItemType = {
-  name: string;
-  description: string;
-  isVegetarian: boolean;
-  price: number;
-};
+export enum MenuClass {
+  MENU = 'MENU',
+  ITEM = 'ITEM',
+}
 
 export type MenuType = {
   name: string;
+  class: MenuClass;
   description: string;
-  menuItems: MenuItemType[];
+  isVegetarian?: boolean;
+  price?: number;
+  menuItems?: MenuType[];
 };
 
 abstract class MenuComponent {
@@ -40,7 +41,7 @@ abstract class MenuComponent {
     throw new Error();
   }
 
-  public print(): MenuType | MenuItemType {
+  public print(): MenuType {
     throw new Error();
   }
 }
