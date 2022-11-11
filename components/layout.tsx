@@ -22,6 +22,12 @@ function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const navigation = [
     {
+      name: "Adapter Pattern",
+      href: "/patterns/adapter",
+      icon: HomeIcon,
+      current: router.route === "/patterns/adapter",
+    },
+    {
       name: "Strategy Pattern",
       href: "/patterns/strategy",
       icon: HomeIcon,
