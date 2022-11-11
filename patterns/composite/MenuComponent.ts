@@ -3,6 +3,7 @@ export enum MenuClass {
   ITEM = 'ITEM',
 }
 
+// TODO: switch to using interface
 export type MenuType = {
   name: string;
   class: MenuClass;
