@@ -13,23 +13,24 @@ type Data = {
   chocolates: ChocolateBoilerResponse[];
 };
 
-export default class ChocolateBoiler {
-  private empty: boolean = true;
-  private boiled: boolean = false;
+export class ChocolateBoiler {
+  private empty: boolean;
+  private boiled: boolean;
 
-  private static _instance: ChocolateBoiler = new ChocolateBoiler();
+  private static uniqueInstance: ChocolateBoiler = new ChocolateBoiler();
 
   constructor() {
-    if (ChocolateBoiler._instance) {
-      throw new Error(
-        "Error: Instantiation failed: Use ChocolateBoilerDemo.getInstance() instead of new."
-      );
-    }
-    ChocolateBoiler._instance = this;
+    this.empty = true;
+    this.boiled = false;
   }
 
   public static getInstance(): ChocolateBoiler {
-    return ChocolateBoiler._instance;
+    if (ChocolateBoiler.uniqueInstance == null){
+      console.info("Creating unique instance of Chocolate Boiler");
+      ChocolateBoiler.uniqueInstance = new ChocolateBoiler();
+    }
+    console.info("Returning instance of Chocolate Boiler");
+    return ChocolateBoiler.uniqueInstance;
   }
 
   public fill(): void {

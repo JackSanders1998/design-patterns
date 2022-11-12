@@ -1,8 +1,8 @@
-import ChocolateBoiler, {
-  ChocolateBoilerResponse,
+import {
+  ChocolateBoiler,
   SingletonResponseType,
-} from "../../patterns/singleton";
-import React, { useState } from "react";
+} from "../../patterns/singleton/ChocolateBoiler";
+import React from "react";
 
 type PropType = {
   buttonText: string;
@@ -10,52 +10,30 @@ type PropType = {
 };
 
 const Singleton = () => {
-  const [chocolateBoilerFeed, setChocolateBoilerFeed] = useState([]);
-  let chocolateResponse: ChocolateBoilerResponse[] = [];
-  let chocolateManager = ChocolateBoiler.getInstance();
-  // chocolateResponse.push({
-  //   empty: chocolateManager.isEmpty(),
-  //   boiled: chocolateManager.isBoiled(),
-  // });
-  // chocolateManager.fill();
-  // chocolateResponse.push({
-  //   empty: chocolateManager.isEmpty(),
-  //   boiled: chocolateManager.isBoiled(),
-  // });
-  // chocolateManager.boil();
-  // chocolateResponse.push({
-  //   empty: chocolateManager.isEmpty(),
-  //   boiled: chocolateManager.isBoiled(),
-  // });
-  // chocolateManager.drain();
-  // chocolateResponse.push({
-  //   empty: chocolateManager.isEmpty(),
-  //   boiled: chocolateManager.isBoiled(),
-  // });
-  // console.log(chocolateResponse);
+  const boiler: ChocolateBoiler = ChocolateBoiler.getInstance();
 
-  const SingletonButton = (props: PropType) => {
-    const handleClick = () => {
-      const tempchocolateBoilerFeed = chocolateBoilerFeed.slice();
-      // tempchocolateBoilerFeed.push(props.singletonFunction);
-      setChocolateBoilerFeed(tempchocolateBoilerFeed);
-      setChocolateBoilerFeed(tempchocolateBoilerFeed);
-    };
+  const Fill = () => {
     return (
-      <button
-        type="button"
-        className="inline-flex items-center rounded border border-transparent bg-indigo-100 px-2.5 py-1.5 text-xs font-medium text-indigo-700 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        onClick={handleClick}
-      >
-        {props.buttonText}
-      </button>
-    );
-  };
+        <button onClick={() => {boiler.fill(); console.log(boiler)}} className={`border border-1 border-slate-100 rounded-md text-center text-slate-300`}>Fill</button>
+    )
+  }
+  const Boil = () => {
+    return (
+        <button onClick={() => {boiler.boil(); console.log(boiler)}} className={`border border-1 border-slate-100 rounded-md text-center text-slate-300`}>Boil</button>
+    )
+  }
+  const Drain = () => {
+    return (
+        <button onClick={() => {boiler.drain(); console.log(boiler)}} className={`border border-1 border-slate-100 rounded-md text-center text-slate-300`}>Drain</button>
+    )
+  }
 
   return (
-    <div>
-      <h1 className="text-white">Singleton Pattern</h1>
-    </div>
+      <div>
+        <Fill />
+        <Boil />
+        <Drain />
+      </div>
   );
 };
 

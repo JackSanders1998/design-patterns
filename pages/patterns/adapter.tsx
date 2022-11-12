@@ -41,11 +41,11 @@ const Adapter = () => {
     DuckTestDrive.main();
     TurkeyTestDrive.main();
 
-  return (
-      <>
-        adapter pattern
-      </>
-  );
+    return (
+        <>
+            adapter pattern
+        </>
+    );
 };
 
 export default Adapter;
