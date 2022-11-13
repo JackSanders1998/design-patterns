@@ -1,6 +1,6 @@
 import {Turkey} from "./Turkey";
 import {Duck} from "./Duck";
-import {getRandomInt} from "./RandomNumber";
+import {getRandomInt} from "../../utils/RandomNumber";
 
 export class DuckAdapter implements Turkey {
     duck: Duck;
