@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This README is a work in progress
 
-## Getting Started
+## Background
+This is a [Next.js](https://nextjs.org/) project bootstrapped with `create-next-app`.
 
-First, run the development server:
+The repository contains a collection of design patterns defined in the textbook [Head First Design Patterns](https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X/ref=asc_df_149207800X/?tag=hyprod-20&linkCode=df0&hvadid=459709175715&hvpos=&hvnetw=g&hvrand=10081017102457885651&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9021719&hvtargid=pla-918195320150&psc=1) by Eric Freeman & Elisabeth Robson. The book is written in Java, but I've transpiled it to TypeScript. Additionally, I have implemented some simple UIs to surface the patterns.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Patterns
+All patterns in found in the `/patterns` directory.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Adapter Pattern
+Adapter pattern info
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Command Pattern
+Command pattern info
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Composite Pattern
+Composite pattern info
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Factory Pattern
+Factory pattern info
 
-## Learn More
+### Observer Pattern
+Observer pattern info
 
-To learn more about Next.js, take a look at the following resources:
+### Strategy Pattern
+Strategy pattern info
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Frontend
+All frontends are found in the `/pages/patterns` directory.
