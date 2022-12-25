@@ -40,16 +40,52 @@ function Layout({ children }: { children: React.ReactNode }) {
       current: router.route === "/patterns/composite",
     },
     {
+      name: "CompoundA Pattern",
+      href: "/patterns/compound-a",
+      icon: CalendarIcon,
+      current: router.route === "/patterns/compound-a",
+    },
+    {
+      name: "CompoundB Pattern",
+      href: "/patterns/compound-b",
+      icon: CalendarIcon,
+      current: router.route === "/patterns/compound-b",
+    },
+    {
+      name: "Decorator Pattern",
+      href: "/patterns/decorator",
+      icon: InboxIcon,
+      current: router.route === "/patterns/decorator",
+    },
+    {
+      name: "Facade Pattern",
+      href: "/patterns/facade",
+      icon: InboxIcon,
+      current: router.route === "/patterns/facade",
+    },
+    {
       name: "Factory Pattern",
       href: "/patterns/factory",
       icon: InboxIcon,
       current: router.route === "/patterns/factory",
     },
     {
+      name: "Iterator Pattern",
+      href: "/patterns/iterator",
+      icon: UsersIcon,
+      current: router.route === "/patterns/iterator",
+    },
+    {
       name: "Observer Pattern",
       href: "/patterns/observer",
       icon: UsersIcon,
       current: router.route === "/patterns/observer",
+    },
+    {
+      name: "Proxy Pattern",
+      href: "/patterns/proxy",
+      icon: FolderIcon,
+      current: router.route === "/patterns/proxy",
     },
     {
       name: "Singleton Pattern",
@@ -68,6 +104,12 @@ function Layout({ children }: { children: React.ReactNode }) {
       href: "/patterns/strategy",
       icon: HomeIcon,
       current: router.route === "/patterns/strategy",
+    },
+    {
+      name: "Template Pattern",
+      href: "/patterns/template",
+      icon: HomeIcon,
+      current: router.route === "/patterns/template",
     },
   ];
 
